@@ -47,6 +47,7 @@ function renderTasks() {
            <span class="button-group">
                 <button class="btn btn-success btn-custom" onclick="markComplete(${task.id})">Complete</button>
                 <button class="btn btn-success btn-custom" onclick="markDoing(${task.id})">On it</button>
+                <button class="btn btn-success btn-custom" onclick="editTask(${task.id})">Edit</button>
                 <button class="btn btn-danger btn-custom" onclick="deleteTask(${task.id})">Delete</button>
             </span>
 
@@ -61,6 +62,48 @@ function renderTasks() {
         }
     });
 }
+
+
+function editTask(taskId) {
+    // Find the task by ID
+    const task = tasks.find(t => t.id === taskId);
+    
+    // Populate the form with the task details
+    document.getElementById('title').value = task.title;
+    document.getElementById('endDate').value = task.endDate;
+    document.getElementById('description').value = task.description;
+    document.getElementById('priority').value = task.priority;
+
+    // Update the form's submit handler to update instead of add
+    const taskForm = document.getElementById('taskForm');
+    taskForm.onsubmit = function(event) {
+        event.preventDefault();
+        updateTask(taskId);
+    };
+}
+
+function updateTask(taskId) {
+    const task = tasks.find(t => t.id === taskId);
+
+    // Update task properties
+    task.title = document.getElementById('title').value;
+    task.endDate = document.getElementById('endDate').value;
+    task.description = document.getElementById('description').value;
+    task.priority = document.getElementById('priority').value;
+
+    // Reset the form and update the task display
+    resetForm();
+    renderTasks();
+}
+
+function resetForm() {
+    document.getElementById('taskForm').reset();
+    document.getElementById('taskForm').onsubmit = function(event) {
+        event.preventDefault();
+        addTask();
+    };
+}
+
 // Function to mark doing
 function markDoing(id) {
     const task = tasks.find(task => task.id === id);
