@@ -1,0 +1,130 @@
+/* styles.css */
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item.completed {
+    text-decoration: line-through;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.button-group .btn-custom {
+    width: 100px; /* Set a fixed width for all buttons */
+    margin: 5px 0; /* Add margin to create spacing between the buttons */
+    display: inline-block; /* Ensure buttons align inline */
+    padding: 10px; /* Consistent padding for all buttons */
+    text-align: center; /* Center text inside the buttons */
+}
+
+
+body {
+    background-color: lightblue; /* Light background */
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.task-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+}
+
+.list-group-item.completed {
+    background-color: #d4edda; /* Greenish background for completed tasks */
+}
+
+.list-group-item .btn {
+    margin-right: 10px;
+}
+
+.list-group-item .btn-success:hover {
+    background-color: #28a745;
+}
+
+.list-group-item .btn-danger:hover {
+    background-color: #dc3545;
+}
+
+.list-group-item span {
+    font-weight: bold;
+}
+
+.card-header {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sticky {
+    position: sticky;
+    top: 20px;
+}
+
+button {
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.priority-high {
+    color: #dc3545; /* Red */
+}
+
+.priority-medium {
+    color: #ffc107; /* Yellow */
+}
+
+.priority-low {
+    color: #28a745; /* Green */
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Aligns the buttons vertically */
+    gap: 10px; /* Adds space between buttons */
+    width: 100%; /* Ensures the buttons take full width */
+}
+
+.btn-custom {
+    width: 100%; /* Makes each button take the full width of the container */
+}

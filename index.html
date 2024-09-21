@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">To-Do List Application</h1>
+
+        <!-- Task Form -->
+        <div class="form-container mb-4">
+            <h3>Add a New Task</h3>
+            <form id="taskForm" class="row g-3">
+                <div class="col-md-6">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" id="endDate" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-control" rows="2"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="priority" class="form-label">Priority</label>
+                    <select id="priority" class="form-select">
+                        <option value="1" class="priority-low">Low</option>
+                        <option value="2" class="priority-medium">Medium</option>
+                        <option value="3" class="priority-high">High</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Task Lists -->
+        <div class="row">
+            <div class="col-md-4 sticky">
+                <h3>To Do</h3>
+                <ul id="to-do" class="list-group task-container">
+                    <!-- To Do tasks will go here -->
+                </ul>
+            </div>
+            <div class="col-md-4 sticky">
+                <h3>Doing</h3>
+                <ul id="doing" class="list-group task-container">
+                    <!-- Doing tasks will go here -->
+                </ul>
+            </div>
+            <div class="col-md-4 sticky">
+                <h3>Done</h3>
+                <ul id="done" class="list-group task-container">
+                    <!-- Done tasks will go here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sort Buttons -->
+        <div class="mt-4">
+            <h3>Sort Tasks</h3>
+            <button id="sortByPriority" class="btn btn-secondary">Sort by Priority</button>
+            <button id="sortByEndDate" class="btn btn-secondary">Sort by End Date</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
